@@ -38,9 +38,10 @@ var adjustMenu = function() {
     $(".nav li .more").unbind('click').bind('click', function() {			
 			$(this).parent("li").toggleClass("hover");
 		});
-		console.log($(".more").parent());
-		var unwantedMore = $("ul.nav").children()[0];
-		$(unwantedMore).attr("style", "background-color:blue;height:40px;");
+		var noMore1 = $("ul.nav").children()[0];
+		var noMore2 = $(".more")[2];
+		$(noMore1).attr("style", "background-color:blue;height:40px;");
+		$(noMore2).attr("style", "display: none;");
 	}
 	else if (ww >= 768) {
     // remove .more link in desktop view
