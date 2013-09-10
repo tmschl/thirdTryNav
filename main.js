@@ -25,7 +25,7 @@ var adjustMenu = function() {
 	if (ww < 768) {
     // if "more" link not in DOM, add it
     if (!$(".more")[0]) {
-    $('<div class="more">&nbsp;</div>').insertBefore($('.parent')); 
+      $('<div class="more" >&nbsp;</div>').insertBefore($('.parent')); 
     }
 		$(".toggleMenu").css("display", "inline-block");
 		if (!$(".toggleMenu").hasClass("active")) {
@@ -35,11 +35,13 @@ var adjustMenu = function() {
 		}
 		$(".nav li").unbind('mouseenter mouseleave');
 		$(".nav li a.parent").unbind('click');
-    $(".nav li .more").unbind('click').bind('click', function() {
-			
+    $(".nav li .more").unbind('click').bind('click', function() {			
 			$(this).parent("li").toggleClass("hover");
 		});
-	} 
+		console.log($(".more").parent());
+		var unwantedMore = $("ul.nav").children()[0];
+		$(unwantedMore).attr("style", "background-color:blue;height:40px;");
+	}
 	else if (ww >= 768) {
     // remove .more link in desktop view
     $('.more').remove(); 
